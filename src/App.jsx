@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { MainMenuPokemon } from './components/MainMenuPokemon'
 import { Pokemon } from './components/Pokemon'
 
 function App() {
   return (
-    <div className="App">
-      <Pokemon />
-    </div>
+    <Routes>
+      <Route path='/' element={<MainMenuPokemon />}/>
+      <Route path='/pokemon' element={<Pokemon />}/>
+    </Routes>
   )
 }
 

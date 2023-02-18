@@ -2,25 +2,35 @@ body {
   margin: 0;
   padding: 0;
   color: rgba(255, 255, 255, 0.87);
-  background-image: url('./assets/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg') ;
+  background-image: url('./assets/img/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-
+  display: grid;
+  place-items: center;
 }
 
-.App{
+:root{
+  font-family: 'VT323', monospace;
+}
+
+.pokemon {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  
 }
 
-.container-pokemons button{
+.container-pokemons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.container-pokemons button {
   display: flex;
   justify-content: center;
-
+  flex-wrap: wrap;
   padding: 1rem 3rem;
   width: 200px;
   text-align: center;
@@ -32,23 +42,81 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   color: #fff;
-  
 }
 
-img{
-  width: 50%;
-
+.container-pokemons button:hover{
+  background-color: #9b45dc;
+  transform: scaleX(1.1);
 }
 
 .valid {
-  background-color: rgb(2, 205, 33)!important ;
+  background-color: rgb(2, 205, 33) !important;
 }
 
 .invalid {
-  background-color: rgb(233, 10, 10) !important ;
+  background-color: rgb(233, 10, 10) !important;
 }
 
-.correct-pokemon{
+.pokemones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.pokemones img {
+  width: 600px;
+  cursor: pointer;
+}
+
+.container-button-next{
+  display: flex;
+  justify-content: center;
+}
+
+.button-next{
+  padding: 1rem 3rem;
+  width: 200px;
+  text-align: center;
+  background-color: #662d91;
+  margin: 1rem;
+  border: none;
+  border-radius: 100vmax;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+}
+
+.main-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  text-align: center;
+}
+
+.option-menu{
+  background-color: transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  color: #fff;
+  border: none;
+}
+
+.option-menu:hover,
+.h1-menu:hover{
+  color: #1752b8;
+  transform: scaleX(1.1);
+}
+
+.h1-menu{
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.img-menu{
   image-rendering: pixelated;
-  filter: brightness(1);
+  cursor: pointer;
 }
