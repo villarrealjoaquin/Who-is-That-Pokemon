@@ -1,0 +1,33 @@
+.main-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  text-align: center;
+  margin: 8rem;
+}
+
+.option-menu{
+  background-color: transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  color: #fff;
+  border: none;
+}
+
+.option-menu:hover,
+.h1-menu:hover{
+  color: #1752b8;
+  transform: scaleX(1.1);
+}
+
+.h1-menu{
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.img-menu{
+  image-rendering: pixelated;
+  cursor: pointer;
+}

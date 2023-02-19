@@ -5,118 +5,54 @@ body {
   background-image: url('./assets/img/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
   display: grid;
-  place-items: center;
 }
 
 :root{
   font-family: 'VT323', monospace;
 }
 
-.pokemon {
+.container-vida{
+  margin: 1.5rem;
   display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.container-pokemons {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   flex-flow: column wrap;
+  background-color: rgba(204, 12, 191, 0.599);
+  width: 30%;
+  padding: 1rem;
+  border-radius: 20%;
+  border: 5px solid #3d030344;
 }
 
-.container-pokemons button {
+
+.life-bar {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 1rem 3rem;
-  width: 200px;
+  align-items: center;
+}
+
+.life-bar-inner {
+  background-color: green;
+  transition: width 0.5s ease-in-out;
+  border-radius: 10px;
+}
+
+.container-life-bar{
+  display: flex;
   text-align: center;
-  background-color: #662d91;
-  margin: 1rem;
-  border: none;
+}
+
+.container-life-bar p{
+  padding-inline: 1.5rem;
+}
+
+.p-life{
+  font-size:1.5rem ;
+  margin: 1rem auto;
+}
+
+.ps{
+  background-color: rgba(136, 255, 0, 0.736);
   border-radius: 100vmax;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #fff;
-}
-
-.container-pokemons button:hover{
-  background-color: #9b45dc;
-  transform: scaleX(1.1);
-}
-
-.valid {
-  background-color: rgb(2, 205, 33) !important;
-}
-
-.invalid {
-  background-color: rgb(233, 10, 10) !important;
-}
-
-.pokemones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-}
-
-.pokemones img {
-  width: 600px;
-  cursor: pointer;
-}
-
-.container-button-next{
-  display: flex;
-  justify-content: center;
-}
-
-.button-next{
-  padding: 1rem 3rem;
-  width: 200px;
-  text-align: center;
-  background-color: #662d91;
-  margin: 1rem;
-  border: none;
-  border-radius: 100vmax;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #fff;
-}
-
-.main-menu{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-  text-align: center;
-}
-
-.option-menu{
-  background-color: transparent;
-  font-size: 3rem;
-  cursor: pointer;
-  font-family: 'VT323', monospace;
-  color: #fff;
-  border: none;
-}
-
-.option-menu:hover,
-.h1-menu:hover{
-  color: #1752b8;
-  transform: scaleX(1.1);
-}
-
-.h1-menu{
-  font-size: 3rem;
-  cursor: pointer;
-}
-
-.img-menu{
-  image-rendering: pixelated;
-  cursor: pointer;
+  margin: 0 .5rem ;
 }

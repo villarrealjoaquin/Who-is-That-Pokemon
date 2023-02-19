@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import images from '../assets/img/images'
+import images from '../../assets/img/images'
+import '../../styles/Menu.css'
 
-export const MainMenuPokemon = () => {
+export const MainMenu = () => {
     return (
         <>  
             <div className='main-menu'>

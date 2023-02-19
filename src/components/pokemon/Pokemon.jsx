@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import JSConfetti from 'js-confetti'
+import '../../styles/Pokemon.css'
+import { BarraDeVida } from './BarraDeVida'
+import { Options } from './Options'
 
 export const Pokemon = () => {
     const [currentPokemon, setCurrentPokemon] = useState(null)
     const [options, setOptions] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
     const [isDisable, setIsDisable] = useState(false)
+    const [life, setLife] = useState(10)
 
     const getPokemons = async () => {
         const request = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`)
@@ -33,7 +37,6 @@ export const Pokemon = () => {
     }, [])
 
     const handleClick = (option, e) => {
-
         const jsConfetti = new JSConfetti()
 
         if (option === currentPokemon.name) {
@@ -44,6 +47,7 @@ export const Pokemon = () => {
         } else {
             e.target.classList.add("invalid")
             setIsDisable(true)
+            setLife(life - 10)
         }
 
         setTimeout(() => {
@@ -51,22 +55,26 @@ export const Pokemon = () => {
             setIsCorrect(false)
             setIsDisable(false)
             getPokemons()
-        }, 1500)
+        }, 1000)
     }
 
     return (
         <>
-            <div className='pokemon'>
-                <div className='container-pokemons'>
-                    {options.map((option, i) => (
-                        <button key={i} disabled={isDisable} onClick={(e) => handleClick(option, e)}>{option}</button>
-                    ))}
-                </div>
-                <div className='pokemones'>
-                    <img style={{ "imageRendering": "pixelated", 'filter': isCorrect ? 'brightness(1)' : 'brightness(0)' }} src={currentPokemon?.sprites.front_default} alt={currentPokemon?.name} />
-                </div>
-            </div>
+            {life > 0 ?
+                <>
+                    <BarraDeVida life={life} />
+                    <div className='pokemon'>
+                        <div className='container-pokemons'>
+                            {options.map((option, i) => (
+                                <button key={i} disabled={isDisable} onClick={(e) => handleClick(option, e)}>{option}</button>
+                            ))}
+                        </div>
+                        <div className='pokemones'>
+                            <img style={{ "imageRendering": "pixelated", 'filter': isCorrect ? 'brightness(1)' : 'brightness(0)' }} src={currentPokemon?.sprites.front_default} alt={currentPokemon?.name} />
+                        </div>
+                    </div>
+                </>
+                : <Options />}
         </>
-
     )
 }
