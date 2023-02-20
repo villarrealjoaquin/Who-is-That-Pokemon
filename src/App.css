@@ -2,12 +2,12 @@ body {
   margin: 0;
   padding: 0;
   color: rgba(255, 255, 255, 0.87);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/img/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg);
   background-image: url('./assets/img/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   box-sizing: border-box;
-  display: grid;
 }
 
 :root{
@@ -49,6 +49,7 @@ body {
 .p-life{
   font-size:1.5rem ;
   margin: 1rem auto;
+  font-weight: bold;
 }
 
 .ps{
@@ -56,3 +57,27 @@ body {
   border-radius: 100vmax;
   margin: 0 .5rem ;
 }
+
+.go-back{
+  display: flex;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  border: none;
+}
+
+.pokemon-sad{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.pokemon-sad-img{
+  width: 50%;
+  max-height: 300px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  margin: 1rem;
+}
+

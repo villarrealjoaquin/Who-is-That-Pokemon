@@ -1,9 +1,16 @@
+.container-pokemon-game{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
 .pokemon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 8rem auto;
+  
 }
 
 .container-pokemons {
@@ -17,13 +24,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 1rem 3rem;
+  padding: 1.5rem 3rem;
   width: 200px;
   text-align: center;
-  background-color: #662d91;
+  background-color: #580498a9;
+  border: 1px solid #ff00ff;
   margin: 1rem;
-  border: none;
-  border-radius: 100vmax;
+  border-radius: 30px 0 30px 0;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
@@ -55,5 +62,14 @@
   cursor: pointer;
 }
 
+.name-pokemon{
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
 
-
+.go-to-home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

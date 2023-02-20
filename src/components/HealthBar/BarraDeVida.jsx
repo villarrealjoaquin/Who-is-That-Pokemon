@@ -3,6 +3,7 @@ import React from 'react'
 export const BarraDeVida = ({ life }) => {
     return (
         <>
+           
             <div className="container-vida">
                 <div className='life-bar'>
                     <p className='p-life'>Player 1</p>
@@ -14,6 +15,7 @@ export const BarraDeVida = ({ life }) => {
                     </div>
                 </div>
             </div>
+            {/* <button className='go-back'>Volver</button> */}
         </>
     )
 }

@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom'
 
 import '../../styles/Options.css'
 
-export const Options = () => {
-
-    const handleHistory = () => {
-        history.push('/pokemon')
-    }
-
+export const Options = ({ puntuaction }) => {
     return (
         <>
             <div className="container-options">
-                <h2>Felicitaciones tu puntuacion fue de: </h2>
+                <h2>Muchas gracias por jugar!</h2>
+                <h2>Felicitaciones tu puntuacion fue de: {puntuaction} </h2>
                 <div className='questions-user'>
                     <h2>Que deseas hacer?</h2>
                 </div>
