@@ -4,10 +4,12 @@ body {
   color: rgba(255, 255, 255, 0.87);
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/img/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg);
   background-image: url('./assets/img/pixels-pixel-art-video-games-pokemon-wallpaper-preview.jpg');
-  background-size: cover;
+  background-size:cover;
+  background-position: bottom ;
   background-repeat: no-repeat;
   min-height: 100vh;
   box-sizing: border-box;
+  background-color: black;
 }
 
 :root{
@@ -81,3 +83,29 @@ body {
   margin: 1rem;
 }
 
+@media screen and (max-width: 740px){
+  .container-vida{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 486px){
+  .container-vida{
+    width: 60%;
+    margin-left: 3rem;
+  }
+}
+
+.spinner{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom{
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 100vh;
+}

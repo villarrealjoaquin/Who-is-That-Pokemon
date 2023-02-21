@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { usePokemonContext } from '../../Context/PokemonProvider'
 
 import '../../styles/Options.css'
 
 export const Options = ({ puntuaction }) => {
+    const { nick } = usePokemonContext()
+    
     return (
         <>
             <div className="container-options">
-                <h2>Muchas gracias por jugar!</h2>
+                <h2>Muchas gracias por jugar {nick}!</h2>
                 <h2>Felicitaciones tu puntuacion fue de: {puntuaction} </h2>
                 <div className='questions-user'>
                     <h2>Que deseas hacer?</h2>

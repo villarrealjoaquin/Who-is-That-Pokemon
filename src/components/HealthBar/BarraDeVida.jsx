@@ -1,12 +1,16 @@
 import React from 'react'
+import '../../styles/BarraDeVida.css'
+import { usePokemonContext } from '../../Context/PokemonProvider';
 
 export const BarraDeVida = ({ life }) => {
+
+    const {nick} = usePokemonContext();
+
     return (
         <>
-           
             <div className="container-vida">
                 <div className='life-bar'>
-                    <p className='p-life'>Player 1</p>
+                    <p className='p-life'>{nick}</p>
                     <p className='p-life'>Nv30</p>
                 </div>
                 <div className='container-life-bar'>
@@ -15,7 +19,6 @@ export const BarraDeVida = ({ life }) => {
                     </div>
                 </div>
             </div>
-            {/* <button className='go-back'>Volver</button> */}
         </>
     )
 }
