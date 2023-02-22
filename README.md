@@ -12,6 +12,7 @@ El proyecto de Pokemon es un juego en el que el usuario debe adivinar el nombre 
 <img height="40" src='https://icongr.am/devicon/javascript-original.svg?size=128&color=aa0909'>
 <img height="40" src='https://icongr.am/devicon/react-original.svg?size=128&color=aa0909'>
 </p>
+
 ---
 
 ## Librerias
