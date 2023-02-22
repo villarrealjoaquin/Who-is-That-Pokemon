@@ -54,10 +54,10 @@ Este proyecto es de código abierto y está disponible para su contribución. Si
 ## Preview
 ---
 
-![preview Pokemon 1](../pokemon/public/pokemon%20preview%201.png)
+![preview Pokemon 1](https://imgur.com/BPJNV09)
 
-![preview Pokemon 2](../pokemon/public/pokemon%20preview%202..png)
+![preview Pokemon 2](https://imgur.com/3szWoau)
 
-![preview Pokemon 3](../pokemon/public/pokemon%20preview%203.png)
+![preview Pokemon 3](https://imgur.com/undefined)
 
 
