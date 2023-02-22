@@ -13,7 +13,7 @@ export const Pokemon = () => {
     const [options, setOptions] = useState([]);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isDisable, setIsDisable] = useState(false);
-    const [life, setLife] = useState(10);
+    const [life, setLife] = useState(100);
     const [pokemonName, setPokemonName] = useState(true);
     const [showTime, setShowTime] = useState(false);
     const [nextPokemonTime, setNextPokemonTime] = useState(2);
@@ -32,15 +32,15 @@ export const Pokemon = () => {
         })
 
         const results = await Promise.all(promises)
-        const current = results[Math.floor(Math.random() * results.length)]
         const newResults = results.filter(pokemon => !selectedPokemonNames.includes(pokemon.name))
+        const current = newResults[Math.floor(Math.random() * results.length)]
         setCurrentPokemon(current)
         setOptions([
             current?.name,
-            newResults[Math.floor(Math.random() * results.length)].name,
-            newResults[Math.floor(Math.random() * results.length)].name,
-            newResults[Math.floor(Math.random() * results.length)].name
-        ].sort(() => Math.random() - 0.5))
+            results[Math.floor(Math.random() * results.length)].name,
+            results[Math.floor(Math.random() * results.length)].name,
+            results[Math.floor(Math.random() * results.length)].name
+        ].sort(() => Math.random() - 1))
         setNextPokemonTime(2)
         setIsLoading(false)
     }
@@ -74,7 +74,7 @@ export const Pokemon = () => {
             e.target.classList.add("invalid")
             setIsCorrect(true)
             setIsDisable(true)
-            setLife(life - 20)
+            setLife(life - 10)
             setPokemonName(false)
         }
         setIsStarted(true)
@@ -112,7 +112,7 @@ export const Pokemon = () => {
                             showTime={showTime}
                             pokemonName={pokemonName}
                         />
-                        {options.length > 0 && <Link to="/"><button className='btn-pokemon-home' >Volver</button></Link>}
+                        {options.length > 0 && <Link to="/"><button className='btn-pokemon-home'>Volver</button></Link>}
                     </>)
                     : (<Options puntuaction={puntuaction} />)}
             </div>

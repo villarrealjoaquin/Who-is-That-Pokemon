@@ -2,6 +2,7 @@ import React from 'react'
 import '../../styles/BarraDeVida.css'
 import { usePokemonContext } from '../../Context/PokemonProvider';
 
+
 export const BarraDeVida = ({ life }) => {
 
     const {nick} = usePokemonContext();

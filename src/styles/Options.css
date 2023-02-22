@@ -1,6 +1,7 @@
 .container-options{
-    /* display: grid;
-    place-content: center; */
+    display: flex;
+    align-items: center;
+    flex-flow:column wrap;
     background-color: rgba(191, 0, 255, 0.276);
     text-align: center;
     width: 50%;
@@ -9,11 +10,7 @@
     padding: 3rem 0;
 }
 
-.btn-options{
-    display: flex;
-    align-items: center;
-    flex-flow:column wrap;
-}
+
 
 .btn-option{
     border: none;
@@ -32,3 +29,23 @@
     background-color: #9b45dc;
     transform: scaleX(1.1);
 }
+
+
+@media screen and (max-width: 810px) {
+    .container-options{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 590px){
+    .container-options{
+        width: 80%;
+    }
+} 
+
+@media screen and (max-width: 470px){
+    .container-options{
+        width: 90%;
+    }
+} 
+
