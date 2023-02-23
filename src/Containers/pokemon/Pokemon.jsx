@@ -40,7 +40,7 @@ export const Pokemon = () => {
             results[Math.floor(Math.random() * results.length)].name,
             results[Math.floor(Math.random() * results.length)].name,
             results[Math.floor(Math.random() * results.length)].name
-        ].sort(() => Math.random() - 1))
+        ].sort(() => Math.random() - 0.5))
         setNextPokemonTime(2)
         setIsLoading(false)
     }
