@@ -12,6 +12,7 @@ El proyecto de Pokemon es un juego en el que el usuario debe adivinar el nombre 
 <img height="40" src='https://icongr.am/devicon/javascript-original.svg?size=128&color=aa0909'>
 <img height="40" src='https://icongr.am/devicon/react-original.svg?size=128&color=aa0909'>
 </p>
+
 ---
 
 ## Librerias
@@ -56,8 +57,8 @@ Este proyecto es de código abierto y está disponible para su contribución. Si
 
 ![preview Pokemon 1](https://imgur.com/BPJNV09.png)
 
-![preview Pokemon 2](../pokemon/public/pokemon%20preview%202..png)
+![preview-Pokemon-2](https://imgur.com/3szWoau.png)
 
-![preview Pokemon 3](../pokemon/public/pokemon%20preview%203.png)
+![preview-Pokemon-3](https://imgur.com/iscjoSB.png)
 
 
