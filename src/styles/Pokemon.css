@@ -58,10 +58,7 @@
 
 .pokemones img {
   width: 500px;
-  cursor: pointer;
   -webkit-user-drag: none;
-  /* -webkit-user-select: none;
-  -moz-user-select: none; */
 }
 
 .name-pokemon {

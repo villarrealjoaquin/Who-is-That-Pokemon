@@ -6,6 +6,7 @@ import { Options } from '../../components/Options/Options'
 import { ListPokemons } from '../../components/ListPokemons/ListPokemons';
 import { Link } from 'react-router-dom'
 import { ColorRing } from 'react-loader-spinner';
+import { pokemons } from '../../pokemonsOptions/pokemonOptions'
 
 export const Pokemon = () => {
     const [currentPokemon, setCurrentPokemon] = useState(null);
@@ -22,30 +23,25 @@ export const Pokemon = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const getPokemons = async () => {
-        const request = await fetch('https://pokeapi.co/api/v2/generation/1')
-        const data = await request.json()
-      
-        const promises = data.pokemon_species.map(async (pokemon) => {
-          const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-          const data = await res.json()
-          return data
-        })
+        const numPokemon = Math.floor(Math.random() * 151) + 1;
+        const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${numPokemon}`);
+        const data = await request.json();
 
-        const results = await Promise.all(promises)
-        const newResults = results.filter(pokemon => !selectedPokemonNames.includes(pokemon.name))
-        const current = newResults[Math.floor(Math.random() * results.length)]
-      
-        setCurrentPokemon(current)
-        setOptions([
-            current?.name,
-            results[Math.floor(Math.random() * results.length)].name,
-            results[Math.floor(Math.random() * results.length)].name,
-            results[Math.floor(Math.random() * results.length)].name
-        ].sort(() => Math.random() - 0.5))
-        setNextPokemonTime(2)
-        setIsLoading(false)
+        if (selectedPokemonNames.includes(data.name)) {
+            getPokemons();
+        } else {
+            setCurrentPokemon(data)
+            setOptions([
+                data?.name,
+                pokemons[Math.floor(Math.random() * pokemons.length)],
+                pokemons[Math.floor(Math.random() * pokemons.length)],
+                pokemons[Math.floor(Math.random() * pokemons.length)]
+            ].sort(() => Math.random() - 0.5))
+            setNextPokemonTime(2)
+            setIsLoading(false)
+        }
     }
-    
+
     useEffect(() => {
         getPokemons()
     }, [])
@@ -103,6 +99,7 @@ export const Pokemon = () => {
                             {isLoading && <h2>Cargando...</h2>}
                         </div>
                         {options.length > 0 && <BarraDeVida life={life} />}
+                        <p className='p-puntuacion'>{puntuaction}</p>
                         <ListPokemons options={options}
                             handleClick={handleClick}
                             isCorrect={isCorrect}
