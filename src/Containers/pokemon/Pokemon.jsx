@@ -22,18 +22,19 @@ export const Pokemon = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const getPokemons = async () => {
-        const request = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+        const request = await fetch('https://pokeapi.co/api/v2/generation/1')
         const data = await request.json()
-
-        const promises = data.results.map(async (pokemon) => {
-            const res = await fetch(pokemon.url)
-            const data = await res.json()
-            return data
+      
+        const promises = data.pokemon_species.map(async (pokemon) => {
+          const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+          const data = await res.json()
+          return data
         })
 
         const results = await Promise.all(promises)
         const newResults = results.filter(pokemon => !selectedPokemonNames.includes(pokemon.name))
         const current = newResults[Math.floor(Math.random() * results.length)]
+      
         setCurrentPokemon(current)
         setOptions([
             current?.name,
@@ -44,8 +45,7 @@ export const Pokemon = () => {
         setNextPokemonTime(2)
         setIsLoading(false)
     }
-
-
+    
     useEffect(() => {
         getPokemons()
     }, [])
