@@ -28,7 +28,7 @@ export const Pokemon = () => {
         const data = await request.json();
 
         if (selectedPokemonNames.includes(data.name)) {
-            getPokemons();
+            setLife(0)
         } else {
             setCurrentPokemon(data)
             setOptions([
@@ -70,7 +70,7 @@ export const Pokemon = () => {
             e.target.classList.add("invalid")
             setIsCorrect(true)
             setIsDisable(true)
-            setLife(life - 10)
+            setLife(life - 30)
             setPokemonName(false)
         }
         setIsStarted(true)
@@ -89,6 +89,7 @@ export const Pokemon = () => {
         }, 3000)
     }
 
+
     return (
         <>
             <div className="container-pokemon-game">
@@ -99,7 +100,6 @@ export const Pokemon = () => {
                             {isLoading && <h2>Cargando...</h2>}
                         </div>
                         {options.length > 0 && <BarraDeVida life={life} />}
-                        <p className='p-puntuacion'>{puntuaction}</p>
                         <ListPokemons options={options}
                             handleClick={handleClick}
                             isCorrect={isCorrect}

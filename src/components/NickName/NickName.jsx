@@ -2,12 +2,11 @@ import React from 'react'
 import '../../styles/NickName.css'
 import { usePokemonContext } from '../../Context/PokemonProvider'
 import { Link } from 'react-router-dom'
-import { useLocalStorage } from '../../CustomHook/useLocalStorage'
 
 export const NickName = () => {
 
     const { nick, newNick } = usePokemonContext();
-    
+
     const handleSubmit = () => {
         e.preventDefault()
     }
@@ -15,7 +14,7 @@ export const NickName = () => {
     return (
         <>
             <div className="container-nick-name">
-                <h2 style={{fontSize:"2rem"}}>Escribe tu Nombre!</h2>
+                <h2 style={{ fontSize: "2rem" }}>Escribe tu Nombre!</h2>
                 <form onSubmit={handleSubmit} className='submit-form'>
                     <input type="text" className='input-nick' value={nick} onChange={newNick} />
                     <Link to='/'><button className='btn-inline'>Confirmar</button></Link>
