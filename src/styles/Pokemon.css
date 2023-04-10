@@ -101,15 +101,18 @@
   }
 }
 
-@media screen and (max-width: 550px){
-  .container-pokemons button{
-    width: 100%;
-  }
+@media screen and (max-width: 550px){ 
   .pokemones img{
     width: 200px;
   }
 
   .name-pokemon {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 414px){
+  .container-pokemon-game{
+    margin: 0 auto;
   }
 }

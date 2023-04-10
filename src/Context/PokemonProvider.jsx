@@ -1,12 +1,11 @@
-import React, { createContext, useContext, useState } from 'react'
-import { useLocalStorage } from '../CustomHook/useLocalStorage'
+import React, { createContext, useContext } from 'react'
+import { useLocalStorage } from '../Hooks/useLocalStorage'
 
 const PokemonContext = createContext()
 
 export const usePokemonContext = () => useContext(PokemonContext)
 
-export const PokemonProvider = ({children}) => {
-
+export const PokemonProvider = ({ children }) => {
   const [nick, setNick] = useLocalStorage('nick', 'player 1');
 
   const newNick = (event) => {

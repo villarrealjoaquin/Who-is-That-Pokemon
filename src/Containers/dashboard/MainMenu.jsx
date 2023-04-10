@@ -4,22 +4,22 @@ import { OptionsMenu } from '../../components/OptionsMenu/OptionsMenu'
 import '../../styles/Menu.css'
 
 export const MainMenu = () => {
-    const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(true)
 
-    const closeModal = () => {
-        setShowModal(!showModal)
-    }
+  const closeModal = () => {
+    setShowModal(!showModal)
+  }
 
-    return (
-        <>
-            {showModal ?
-                (
-                    <OptionsMenu closeModal={closeModal} />
-                )
-                :
-                (
-                    <ExitGame closeModal={closeModal} />
-                )}
-        </>
-    )
+  return (
+    <>
+      {showModal ?
+        (
+          <OptionsMenu closeModal={closeModal} />
+        )
+        :
+        (
+          <ExitGame closeModal={closeModal} />
+        )}
+    </>
+  )
 }

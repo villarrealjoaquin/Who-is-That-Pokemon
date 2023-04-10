@@ -1,51 +1,51 @@
-.container-options{
-    display: flex;
-    align-items: center;
-    flex-flow:column wrap;
-    background-color: rgba(191, 0, 255, 0.276);
-    text-align: center;
-    width: 50%;
-    margin: 16rem auto;
-    border: thick solid #a102bd;
-    padding: 3rem 0;
+.container-options {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  background-color: rgba(191, 0, 255, 0.276);
+  text-align: center;
+  width: 50%;
+  margin: 16rem auto;
+  border: thick solid #a102bd;
+  padding: 3rem 0;
 }
 
 
 
-.btn-option{
-    border: none;
-    background-color: #662d91;
-    width: 200px;
-    height: 50px;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: .5rem;
-    color: #fff;
-    font-weight: bold;
-    outline: none;
-    cursor: pointer;
+.btn-option {
+  border: none;
+  background-color: #662d91;
+  width: 200px;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: .5rem;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
 }
-.btn-option:hover{
-    background-color: #9b45dc;
-    transform: scaleX(1.1);
+
+.btn-option:hover {
+  background-color: #9b45dc;
+  transform: scaleX(1.1);
 }
 
 
 @media screen and (max-width: 810px) {
-    .container-options{
-        width: 70%;
-    }
+  .container-options {
+    width: 70%;
+  }
 }
 
-@media screen and (max-width: 590px){
-    .container-options{
-        width: 80%;
-    }
-} 
+@media screen and (max-width: 590px) {
+  .container-options {
+    width: 80%;
+  }
+}
 
-@media screen and (max-width: 470px){
-    .container-options{
-        width: 90%;
-    }
-} 
-
+@media screen and (max-width: 470px) {
+  .container-options {
+    width: 90%;
+  }
+}
