@@ -11,14 +11,12 @@ export const NickName = () => {
   }
 
   return (
-    <>
-      <div className="container-nick-name">
-        <h2 style={{ fontSize: "2rem" }}>Escribe tu Nombre!</h2>
-        <form onSubmit={handleSubmit} className='submit-form'>
-          <input type="text" className='input-nick' value={nick} onChange={newNick} />
-          <Link to='/'><button className='btn-inline'>Confirmar</button></Link>
-        </form>
-      </div>
-    </>
+    <div className="container-nick-name">
+      <h2 style={{ fontSize: "2rem" }}>Escribe tu Nombre!</h2>
+      <form onSubmit={handleSubmit} className='submit-form'>
+        <input type="text" className='input-nick' value={nick} onChange={newNick} />
+        <Link to='/'><button className='btn-inline'>Confirmar</button></Link>
+      </form>
+    </div>
   )
 }

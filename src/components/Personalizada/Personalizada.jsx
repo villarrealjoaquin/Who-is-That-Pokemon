@@ -1,11 +1,10 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
-export const Personalizada = () => {
-  return (
-    <>
-      <div className='custom'>
-        <h2>Proximamente...</h2>
-      </div>
-    </>
-  )
-}
+export const Personalizada = () => (
+  <div className='custom'>
+    <h2>Proximamente...</h2>
+    <Link to='/'>
+      <button className='btn-inline'>Regresar</button>
+    </Link>
+  </div>
+)  

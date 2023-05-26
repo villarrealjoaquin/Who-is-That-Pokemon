@@ -15,7 +15,7 @@ function App() {
         <Route path='/pokemon' element={<Pokemon />} />
         <Route path='/sadPokemon' element={<SadPokemon />} />
         <Route path="nick" element={<NickName />} />
-        <Route path='/personalizada' element={<Personalizada />}/>
+        <Route path='/personalizada' element={<Personalizada />} />
       </Routes>
     </PokemonProvider>
   )

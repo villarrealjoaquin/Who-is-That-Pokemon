@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 import { ColorRing } from 'react-loader-spinner';
 import { pokemons } from '../../assets/pokemonsOptions/pokemonOptions'
 
+const jsConfetti = new JSConfetti()
+
 export const Pokemon = () => {
   const [currentPokemon, setCurrentPokemon] = useState(null);
   const [puntuaction, setPuntuaction] = useState(0);
@@ -23,7 +25,7 @@ export const Pokemon = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   const getPokemons = async () => {
-    const numPokemon = Math.floor(Math.random() * 151) + 1;
+    const numPokemon = Math.floor(Math.random() * 503) + 1;
     const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${numPokemon}`);
     const data = await request.json();
 
@@ -45,8 +47,6 @@ export const Pokemon = () => {
   useEffect(() => {
     getPokemons()
   }, [])
-
-  const jsConfetti = new JSConfetti()
 
   useEffect(() => {
     if (nextPokemonTime > 0 && isStarted) {
@@ -70,7 +70,7 @@ export const Pokemon = () => {
       e.target.classList.add("invalid")
       setIsCorrect(true)
       setIsDisable(true)
-      setLife(life - 25)
+      setLife(life - 20)
       setPokemonName(false)
     }
     setIsStarted(true)
@@ -105,34 +105,33 @@ export const Pokemon = () => {
   }
 
   return (
-    <>
-      <div className="container-pokemon-game">
-        {life > 0 ?
-          (<>
-            <div className='spinner'>
-              {isLoading && <ColorRing colors={['']} />}
-              {isLoading && <h2>Cargando...</h2>}
-            </div>
-            {options.length > 0 && <BarraDeVida life={life} />}
-            <ListPokemons options={options}
-              handleClick={handleClick}
-              isCorrect={isCorrect}
-              isDisable={isDisable}
-              currentPokemon={currentPokemon}
-              nextPokemonTime={nextPokemonTime}
-              showTime={showTime}
-              pokemonName={pokemonName}
-            />
-            {options.length > 0 &&
-              <Link to='/'>
-                <button className='btn-pokemon-home'>
-                  Volver
-                </button>
-              </Link>}
-          </>
-          )
-          : (<Options puntuaction={puntuaction} resetGame={resetGame} />)}
-      </div>
-    </>
+    <div className="container-pokemon-game">
+      {life > 0 ?
+        (<>
+          <div className='spinner'>
+            {isLoading && <ColorRing colors={['']} />}
+            {isLoading && <h2>Cargando...</h2>}
+          </div>
+          {options.length > 0 && <BarraDeVida life={life} />}
+          <ListPokemons
+            options={options}
+            handleClick={handleClick}
+            isCorrect={isCorrect}
+            isDisable={isDisable}
+            currentPokemon={currentPokemon}
+            nextPokemonTime={nextPokemonTime}
+            showTime={showTime}
+            pokemonName={pokemonName}
+          />
+          {options.length > 0 &&
+            <Link to='/'>
+              <button className='btn-pokemon-home'>
+                Volver
+              </button>
+            </Link>}
+        </>
+        )
+        : (<Options puntuaction={puntuaction} resetGame={resetGame} />)}
+    </div>
   )
 }

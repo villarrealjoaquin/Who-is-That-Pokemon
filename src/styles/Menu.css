@@ -42,7 +42,7 @@
 .modal {
   position: relative;
   background-color: rgba(191, 0, 255, 0.276);
-  border: thick solid #a102bd;
+  border: medium solid #a102bd;
   padding: 5rem 0;
   width: 50%;
 }
