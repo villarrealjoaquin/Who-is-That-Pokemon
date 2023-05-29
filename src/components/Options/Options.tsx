@@ -1,10 +1,14 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { usePokemonContext } from '../../Context/PokemonProvider'
 
 import '../../styles/Options.css'
 
-export const Options = ({ puntuaction, resetGame }) => {
+interface PropsOptions {
+  puntuaction: number
+  resetGame: () => void
+}
+
+export const Options = ({ puntuaction, resetGame }: PropsOptions) => {
   const { nick } = usePokemonContext()
 
   return (

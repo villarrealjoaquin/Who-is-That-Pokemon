@@ -2,11 +2,15 @@ import images from '../../assets/img/images'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion';
 
-export const OptionsMenu = ({ closeModal }) => (
+interface PropsClose {
+  closeModal: () => void
+}
+
+export const OptionsMenu = ({ closeModal }: PropsClose) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1 }}
+    transition={{ duration: 0.5 }}
   >
     <div className='main-menu'>
       <img className='img-menu' src={images.img1} alt="logo pokemon" />

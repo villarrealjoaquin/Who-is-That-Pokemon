@@ -1,7 +1,10 @@
-import React from 'react'
 import { usePokemonContext } from '../../Context/PokemonProvider';
 
-export const BarraDeVida = ({ life }) => {
+interface PropsLife {
+  life: number
+}
+
+export const BarraDeVida = ({ life }: PropsLife) => {
   const { nick } = usePokemonContext();
 
   return (

@@ -1,11 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import { MainMenu } from '../src/Containers/dashboard/MainMenu'
-import { Pokemon } from '../src/Containers/pokemon/Pokemon'
-import { SadPokemon } from './components/SadPokemon/SadPokemon'
+import { Pokemon, MainMenu } from './Containers'
+import { SadPokemon, NickName, Personalizada, Pokeball } from './components'
 import { PokemonProvider } from './Context/PokemonProvider'
-import { NickName } from './components/NickName/NickName'
-import { Personalizada } from './components/Personalizada/Personalizada'
+
+import './App.css'
 
 function App() {
   return (

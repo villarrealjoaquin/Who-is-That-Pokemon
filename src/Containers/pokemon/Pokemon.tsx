@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import JSConfetti from 'js-confetti'
-import '../../styles/Pokemon.css'
-import { BarraDeVida } from '../../components/HealthBar/BarraDeVida'
-import { Options } from '../../components/Options/Options'
-import { ListPokemons } from '../../components/ListPokemons/ListPokemons';
+import { useState, useEffect } from 'react'
+import { BarraDeVida, Options, ListPokemons } from '../../components'
 import { Link } from 'react-router-dom'
-import { ColorRing } from 'react-loader-spinner';
+import { ColorRing } from 'react-loader-spinner'
 import { pokemons } from '../../assets/pokemonsOptions/pokemonOptions'
+import { PokemonType } from 'src/types/types'
+import JSConfetti from 'js-confetti'
+
+import '../../styles/Pokemon.css'
 
 const jsConfetti = new JSConfetti()
 
 export const Pokemon = () => {
-  const [currentPokemon, setCurrentPokemon] = useState(null);
+  const [currentPokemon, setCurrentPokemon] = useState<PokemonType | null>(null);
+  const [options, setOptions] = useState<Array<string>>([]);
   const [puntuaction, setPuntuaction] = useState(0);
-  const [options, setOptions] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isDisable, setIsDisable] = useState(false);
   const [life, setLife] = useState(100);
   const [pokemonName, setPokemonName] = useState(true);
   const [showTime, setShowTime] = useState(false);
-  const [nextPokemonTime, setNextPokemonTime] = useState(2);
-  const [isStarted, setIsStarted] = useState(false);
-  const [selectedPokemonNames, setSelectedPokemonNames] = useState([]);
-  const [isLoading, setIsLoading] = useState(true)
+  const [nextPokemonTime, setNextPokemonTime] = useState(3);
+  const [isStarted, setIsStarted] = useState<Boolean>(false);
+  const [selectedPokemonNames, setSelectedPokemonNames] = useState<Array<string>>([]);
+  const [isLoading, setIsLoading] = useState<Boolean>(true)
 
   const getPokemons = async () => {
     const numPokemon = Math.floor(Math.random() * 503) + 1;
@@ -57,10 +57,10 @@ export const Pokemon = () => {
     }
   }, [nextPokemonTime, isStarted])
 
-  const handleClick = (option, e) => {
-    setSelectedPokemonNames([...selectedPokemonNames, currentPokemon.name])
+  const handleClick = (option: String, e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedPokemonNames([...selectedPokemonNames, currentPokemon?.name ?? ""])
     setShowTime(true)
-    if (option === currentPokemon.name) {
+    if (currentPokemon && option === currentPokemon.name) {
       e.target.classList.add("valid")
       setIsCorrect(true)
       setIsDisable(true)
@@ -70,14 +70,14 @@ export const Pokemon = () => {
       e.target.classList.add("invalid")
       setIsCorrect(true)
       setIsDisable(true)
-      setLife(life - 20)
+      setLife(life - 25)
       setPokemonName(false)
     }
     setIsStarted(true)
     nextPokemon(e)
   }
 
-  const nextPokemon = (e) => {
+  const nextPokemon = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTimeout(() => {
       e.target.classList.remove("valid", "invalid")
       setIsCorrect(false)
@@ -98,18 +98,18 @@ export const Pokemon = () => {
     setLife(100)
     setPokemonName(true)
     setShowTime(false)
-    setNextPokemonTime(2)
+    setNextPokemonTime(3)
     setIsStarted(false)
     setSelectedPokemonNames([])
     setIsLoading(true)
   }
 
   return (
-    <div className="container-pokemon-game">
+    <main className="container-pokemon-game">
       {life > 0 ?
-        (<>
+        <>
           <div className='spinner'>
-            {isLoading && <ColorRing colors={['']} />}
+            {isLoading && <ColorRing colors={['#a90dec', '#a90dec', '#a90dec', '#a90dec', '#a90dec']} />}
             {isLoading && <h2>Cargando...</h2>}
           </div>
           {options.length > 0 && <BarraDeVida life={life} />}
@@ -118,7 +118,7 @@ export const Pokemon = () => {
             handleClick={handleClick}
             isCorrect={isCorrect}
             isDisable={isDisable}
-            currentPokemon={currentPokemon}
+            currentPokemon={currentPokemon ?? { name: "", sprites: { front_default: "" } }}
             nextPokemonTime={nextPokemonTime}
             showTime={showTime}
             pokemonName={pokemonName}
@@ -130,8 +130,7 @@ export const Pokemon = () => {
               </button>
             </Link>}
         </>
-        )
-        : (<Options puntuaction={puntuaction} resetGame={resetGame} />)}
-    </div>
+        : <Options puntuaction={puntuaction} resetGame={resetGame} />}
+    </main>
   )
 }

@@ -1,12 +1,13 @@
-import React from 'react'
-import '../../styles/NickName.css'
+import React from 'react';
 import { usePokemonContext } from '../../Context/PokemonProvider'
 import { Link } from 'react-router-dom'
+
+import '../../styles/NickName.css'
 
 export const NickName = () => {
   const { nick, newNick } = usePokemonContext();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
   }
 

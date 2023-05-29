@@ -1,7 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const ExitGame = ({ closeModal }) => (
+interface PropsClose {
+  closeModal: () => void
+}
+
+export const ExitGame = ({ closeModal }: PropsClose) => (
   <div className="modal-container">
     <div className="modal">
       <button className='close' onClick={closeModal}>X</button>
