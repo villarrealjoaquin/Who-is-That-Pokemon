@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Pokemon, MainMenu } from './Containers'
-import { SadPokemon, NickName, Personalizada, Pokeball } from './components'
+import { SadPokemon, NickName, Personalizada } from './components'
 import { PokemonProvider } from './Context/PokemonProvider'
 
 import './App.css'

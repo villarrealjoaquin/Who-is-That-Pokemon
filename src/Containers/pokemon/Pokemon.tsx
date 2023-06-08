@@ -22,7 +22,7 @@ export const Pokemon = () => {
   const [nextPokemonTime, setNextPokemonTime] = useState(3);
   const [isStarted, setIsStarted] = useState<Boolean>(false);
   const [selectedPokemonNames, setSelectedPokemonNames] = useState<Array<string>>([]);
-  const [isLoading, setIsLoading] = useState<Boolean>(true)
+  const [isLoading, setIsLoading] = useState<Boolean>(true);
 
   const getPokemons = async () => {
     const numPokemon = Math.floor(Math.random() * 503) + 1;
