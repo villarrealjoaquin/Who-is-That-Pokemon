@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export const Personalizada = () => (
+const CustomPokemon = () => (
   <div className='custom'>
     <h2>Proximamente...</h2>
     <Link to='/'>
@@ -8,3 +8,5 @@ export const Personalizada = () => (
     </Link>
   </div>
 )  
+
+export default CustomPokemon

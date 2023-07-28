@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import '../../styles/NickName.css'
 
-export const NickName = () => {
+const NickName = () => {
   const { nick, newNick } = usePokemonContext();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,3 +21,5 @@ export const NickName = () => {
     </div>
   )
 }
+
+export default NickName

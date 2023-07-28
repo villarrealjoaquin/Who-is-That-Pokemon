@@ -1,9 +1,9 @@
 export * from './ButtonsOptions/ButtonsOptions';
 export * from './ExitGame/ExitGame';
-export * from './HealthBar/BarraDeVida';
+export * from './HealthBar/HealthBar';
 export * from './ListPokemons/ListPokemons';
-export * from './NickName/NickName';
+export { default as NickName } from './NickName/NickName';
 export * from './Options/Options';
 export * from './OptionsMenu/OptionsMenu';
-export * from './Personalizada/Personalizada';
-export * from './SadPokemon/SadPokemon';
+export { default as Personalizada } from './CustomPokemon/CustomPokemon';
+export { default as SadPokemon } from './SadPokemon/SadPokemon';

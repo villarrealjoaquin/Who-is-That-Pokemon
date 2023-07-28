@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BarraDeVida, Options, ListPokemons } from '../../components'
+import { Options, ListPokemons, HealthBar } from '../../components'
 import { Link } from 'react-router-dom'
 import { ColorRing } from 'react-loader-spinner'
 import { pokemons } from '../../assets/pokemonsOptions/pokemonOptions'
@@ -10,7 +10,7 @@ import '../../styles/Pokemon.css'
 
 const jsConfetti = new JSConfetti()
 
-export const Pokemon = () => {
+const Pokemon = () => {
   const [currentPokemon, setCurrentPokemon] = useState<PokemonType | null>(null);
   const [options, setOptions] = useState<Array<string>>([]);
   const [puntuaction, setPuntuaction] = useState(0);
@@ -112,7 +112,7 @@ export const Pokemon = () => {
             {isLoading && <ColorRing colors={['#a90dec', '#a90dec', '#a90dec', '#a90dec', '#a90dec']} />}
             {isLoading && <h2>Cargando...</h2>}
           </div>
-          {options.length > 0 && <BarraDeVida life={life} />}
+          {options.length > 0 && <HealthBar life={life} />}
           <ListPokemons
             options={options}
             handleClick={handleClick}
@@ -134,3 +134,5 @@ export const Pokemon = () => {
     </main>
   )
 }
+
+export default Pokemon

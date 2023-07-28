@@ -3,7 +3,7 @@ import { ExitGame, OptionsMenu } from '../../components'
 
 import '../../styles/Menu.css'
 
-export const MainMenu = () => {
+const MainMenu = () => {
   const [showModal, setShowModal] = useState(true)
 
   const closeModal = () => {
@@ -18,3 +18,5 @@ export const MainMenu = () => {
     </div>
   )
 }
+
+export default MainMenu

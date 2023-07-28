@@ -1,10 +1,11 @@
+import { motion } from 'framer-motion';
 import { usePokemonContext } from '../../Context/PokemonProvider';
 
 interface PropsLife {
   life: number
 }
 
-export const BarraDeVida = ({ life }: PropsLife) => {
+export const HealthBar = ({ life }: PropsLife) => {
   const { nick } = usePokemonContext();
 
   return (
@@ -15,8 +16,13 @@ export const BarraDeVida = ({ life }: PropsLife) => {
       </div>
       <div className='container-life-bar'>
         <p className='ps'>PS</p>
-        <div className="life-bar-inner" style={{ width: `${life}%`, backgroundColor: life < 30 ? "red" : "green" }} >
-        </div>
+        <motion.div
+          className="life-bar-inner"
+          style={{ width: `${life}%`, backgroundColor: life < 30 ? "red" : "green" }}
+          initial={{ width: '0%' }}
+          animate={{ width: `${life}%` }} 
+          transition={{ duration: 0.5 }} 
+        />
       </div>
     </div>
   )
