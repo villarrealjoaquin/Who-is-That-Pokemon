@@ -20,6 +20,7 @@ El proyecto de Pokemon es un juego en el que el usuario debe adivinar el nombre 
 
 * [react-router-dom](https://reactrouter.com/en/main): Creacion de rutas 
 * [react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner): Implementacion de spinner
+* [framer-motion](https://www.framer.com/motion/): Animaciones
 
 
 ## Instalacion
